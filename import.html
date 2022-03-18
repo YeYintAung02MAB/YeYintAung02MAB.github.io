@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./bootstrap1/css/bootstrap.min.css">
+  <!-- custom -->
+  <link rel="stylesheet" href="./asserts/css/main.css">
+
+</head>
+<body>
+ 
+     
+
+<div class="container-fluid"> <!-- Container1 -->
+    <!-- <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <nav class="navbar">
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid" src="./asserts/image/Banner.png"/>
+                </a>
+            </nav>
+        </div>  
+    </div> -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+        <a class="navbar-brand" href="#">MPU IST Report</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navb" class="navbar-collapse collapse hide">
+          
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Register User</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Users</a>
+            </li>
+          </ul>
+      
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="fas fa-user"></span>Mg Mg</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="fas fa-sign-in-alt"></span> Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="row">
+        <div class="container-fluid"> <!-- Container2 -->
+            <div class="row" style="margin-top: 8%;"></div>
+            <div class="row">
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-4 offset-md-4 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <div class="form-group"></div>
+                                <h5 class="card-title">Select File</h5>  
+                                    <label for="sel1">By Name:</label>
+                                    <select id="filename" class="form-control" id="sel1">
+                                    <option>Select</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    </select> 
+
+                                    <label for="sel1">Type:</label>
+                                    <select id="filetype" class="form-control" id="sel2">
+                                    <option>Select</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    </select> 
+
+                                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                                    <button type="submit" class="btn btn-sm btn-submit">Validate</button>
+                                    <button id="previewBtn" disabled="true" target="_blank" class="btn btn-submit">Preview</button>
+                                    <button type="submit" class="btn btn-submit">Submit</button>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="spinner-border spinner-border-sm text-warning"></div>
+                                          <span class="text-danger">&nbsp;&nbsp;&nbsp;Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
+                </div>
+                
+            </div><!-- /Container2 -->
+
+        </div>
+    </div>
+
+</div><!-- /Container1 -->
+
+<script src="./bootstrap1/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="./bootstrap1/js/bootstrap.min.js"></script>
+
+<!-- Custom -->
+<script>
+    $(document).ready(function(){
+        $("#previewBtn").attr("disabled",true);
+        let previewBtnDisable=true;
+        let filenameChange=false;
+        let filetypeChange=false;
+        let selectedFileName="";
+        let selectedFileType="";
+
+        let comboOnChange=()=>{
+            if(filenameChange==true && filetypeChange==true){
+                if($("#filename").val()==="Select" || $("#filetype").val()==="Select"){
+                    $("#previewBtn").attr("disabled",true);
+                }else{
+                    $("#previewBtn").attr("disabled",false);
+                    
+                    selectedFileName=$("#filename").val();
+                    selectedFileType=$("#filetype").val();
+                }
+            }else{
+                $("#previewBtn").attr("disabled",true);
+            }
+        };
+
+        $("#filename").change(()=>{
+            debugger;
+            filenameChange=true;    
+            comboOnChange();
+        });
+
+        $("#filetype").change(()=>{
+            debugger;
+            filetypeChange=true;    
+            comboOnChange();
+        });
+
+        $("#previewBtn").click(()=>{
+            window.open(`${selectedFileName}/${selectedFileType}/inc_01c_preview.html`, '_blank') 
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(218, 211, 203);
+}
+
+div.container-fluid{
+    overflow: hidden;
+    padding:0;
+    padding-right:0;
+    /* max-width: 100vw; */
+}
+/*nav.navbar{ 
+    margin: 0;
+    padding:0;
+    background-color: rgb(107, 38, 48);
+    max-height: 50px;   
+}
+ nav.navbar .navbar-brand{ 
+    margin:0;
+    padding:0;
+}
+nav.navbar img{
+    margin:0;
+    max-height: 50px;
+} */
+
+.card{
+    height: auto; 
+    border:solid 2px  rgb(107, 38, 48);
+}
+
+div.card-body .card-title{
+    color:#000;
+}
+
+.btn-submit{
+    margin-right:5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    background-color: rgb(107, 38, 48);
+    color:#FFF; 
+}
+
+.table td, .table th {
+    padding:0;
+}
+
+.table{
+    margin-left: 17px;
+    overflow: scroll;
+}
+
+thead{
+    position:sticky;
+    top:50px;
+}
+
+.report-title h4, .report-title p{
+    text-align: center;
+}

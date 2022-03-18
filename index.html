@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <!-- custom -->
+  <link rel="stylesheet" href="./asserts/css/main.css">
+
+</head>
+<body>
+ 
+     
+
+<div class="container-fluid"> <!-- Container1 -->
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <nav class="navbar">
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid" src="./asserts/image/Banner.png"/>
+                </a>
+            </nav>
+        </div>  
+    </div>
+    <div class="row">
+        <div class="container-fluid"> <!-- Container2 -->
+            <div class="row" style="margin-top: 8%;"></div>
+            <div class="row">
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-4 offset-md-4 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <div class="form-group"></div>
+
+
+
+                                <h5 class="card-title">Select Folder</h5>  
+                                    <label for="sel1">By Date:</label>
+                                    <select class="form-control" id="sel1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    </select> 
+                                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                                    <button type="submit" class="btn btn-submit">Submit</button>
+                                    
+                                    <div class="d-flex justify-content-center">
+                                        <div class="spinner-border spinner-border-sm text-warning"></div>
+                                          <span class="text-danger">&nbsp;&nbsp;&nbsp;Loading...</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                      </div>
+                </div>
+                
+            </div><!-- /Container2 -->
+        </div>
+    </div>
+
+</div><!-- /Container1 -->
+
+<!-- Bootstrap -->
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+<script src="./jquery/jquery-2.2.4.js"></script>
+<!-- Custom -->
+
+<script>
+    $(document).ready(function(){
+        alert("all")
+    })
+</script>
+
+</body>
+</html>
